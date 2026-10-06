@@ -12,3 +12,24 @@ filters.forEach(button => {
     });
   });
 });
+
+const welcome = document.querySelector('.welcome-dialog');
+if (welcome && typeof welcome.showModal === 'function') {
+  const closeWelcome = () => welcome.close();
+  welcome.querySelector('.welcome-close').addEventListener('click', closeWelcome);
+  welcome.querySelector('.welcome-explore').addEventListener('click', () => {
+    closeWelcome();
+    document.querySelector('#menu').scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+    const firstFilter = document.querySelector('[data-filter="all"]');
+    firstFilter.focus({ preventScroll: true });
+  });
+  welcome.addEventListener('click', event => {
+    const bounds = welcome.getBoundingClientRect();
+    if (event.target === welcome && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) closeWelcome();
+  });
+  welcome.addEventListener('close', () => document.body.classList.remove('welcome-open'));
+  welcome.showModal();
+  document.body.classList.add('welcome-open');
+}
