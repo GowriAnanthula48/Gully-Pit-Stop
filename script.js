@@ -33,3 +33,12 @@ if (welcome && typeof welcome.showModal === 'function') {
   welcome.showModal();
   document.body.classList.add('welcome-open');
 }
+
+const motionToggle = document.querySelector('.motion-toggle');
+if (motionToggle) {
+  motionToggle.addEventListener('click', () => {
+    const paused = document.body.classList.toggle('motion-paused');
+    motionToggle.setAttribute('aria-pressed', String(paused));
+    motionToggle.textContent = paused ? 'Play motion' : 'Pause motion';
+  });
+}
