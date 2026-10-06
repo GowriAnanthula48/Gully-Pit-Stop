@@ -17,5 +17,10 @@ Run from this directory. No build or dependency installation is required. Option
 - Puri and Punugulu.
 - Maggi, Fried Rice, and Noodles: Veg, Egg, or Chicken.
 - Millet Pongal and Chai.
+- Freshly Squeezed Lime Soda: Salt, Jeera/Masala, or Sugar.
+- Soda Cans: Thumbsup, Coke, or Sprite.
+- Samosa Chat.
 
 Food imagery in `assets/food-grid.png` is AI-generated and illustrative. Prices, location, and contact details can be added when available. GitHub Pages serves the root of `main`.
+
+New menu and trailer imagery in `assets/menu-expansion.png` is AI-generated and illustrative.
